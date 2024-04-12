@@ -10,6 +10,7 @@ class InferlessPythonModel:
 
     def infer(self, inputs):
         image_url = inputs["image_url"]
+        self.pipe()
         pillow_mask = self.pipe(image_url, return_mask = True) # outputs a pillow mask
         pillow_image = self.pipe(image_url) # applies mask on input and returns a pillow image
         
